@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microprocessors vs GPUs in AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-size: 1.2em; /* readable font size */
+        }
+        .card-body {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .card-title {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">AI Hardware Evolution</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/ask-ui">Ask AI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/how-ml-works">How ML Works</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/genai-energy">Energy Consumption</a>
+                </li>
+                <li class="nav-item"><a class="nav-link active" href="/spring-ai">Spring AI</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/gen-ai-history">Gen AI History</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/neural-networks">Neural Networks</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/nlp">Natural Language Processing</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/rag">RAG</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="container text-center my-5">
+    <h1 class="fw-bold">From Microprocessors to GPUs: Powering AI at Scale</h1>
+    <p class="text-muted">
+        How mathematics and statistics enable modern GPUs to process text, images, voices, and videos
+        at unprecedented speeds, transforming AI learning.
+    </p>
+</div>
+
+<!-- Card Grid -->
+<div class="container">
+    <div class="row g-4">
+
+        <!-- Card 1: Traditional Microprocessors -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-primary h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Traditional Microprocessors (CPUs)</h5>
+                    <ul class="list-unstyled">
+                        <li>• Optimized for sequential task execution and general-purpose computing.</li>
+                        <li>• Limited parallelism; fewer cores focus on complex single-threaded operations.</li>
+                        <li>• Ideal for control logic, operating systems, and transactional workloads.</li>
+                        <li>• Struggle with high-volume AI workloads (e.g., training massive neural networks).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Modern GPUs -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-success h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Modern GPUs for AI</h5>
+                    <ul class="list-unstyled">
+                        <li>• Designed for highly parallel tasks using thousands of cores.</li>
+                        <li>• Excels at matrix multiplication and vector operations central to AI.</li>
+                        <li>• Efficient in handling images, video, audio, and large text datasets simultaneously.</li>
+                        <li>• Foundational for deep learning, generative AI, and real-time inference.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Mathematics & Statistics -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-warning h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Mathematics & Statistics in AI</h5>
+                    <ul class="list-unstyled">
+                        <li>• Linear algebra powers neural networks (matrix operations, dot products).</li>
+                        <li>• Probability and statistics underpin model predictions and uncertainty estimation.</li>
+                        <li>• Gradient descent and optimization algorithms drive learning efficiency.</li>
+                        <li>• GPUs accelerate these calculations at massive scale.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: AI Data Types -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-info h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Processing Text, Images, and Beyond</h5>
+                    <ul class="list-unstyled">
+                        <li>• Text: Large language models analyze and generate human-like language.</li>
+                        <li>• Images: Convolutional networks detect objects and patterns.</li>
+                        <li>• Audio/Voice: Spectrograms and recurrent networks power speech recognition.</li>
+                        <li>• Video: Temporal-spatial AI models enable real-time video understanding.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Learning at Scale -->
+        <div class="col-md-12">
+            <div class="card shadow-sm border-danger h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Learning Fast with Massive Compute</h5>
+                    <p>
+                        By leveraging GPUs’ parallelism, AI models process trillions of parameters rapidly.
+                        Mathematical operations such as matrix multiplication, probability distribution sampling,
+                        and gradient optimization allow these models to learn from vast datasets—accelerating
+                        breakthroughs in generative AI, autonomous driving, and multimodal intelligence.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center mt-5 mb-3 text-muted">
+    &copy; 2025 AI Hardware Insights
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

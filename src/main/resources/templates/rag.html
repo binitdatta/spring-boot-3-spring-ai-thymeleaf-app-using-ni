@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG - Retrieval Augmented Generation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Increase font size of card content by 10% */
+        .card-body {
+            font-size: 1.1em;
+        }
+        /* Make images clickable with hover effect */
+        .zoomable {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .zoomable:hover {
+            transform: scale(1.02);
+        }
+        /* Ensure modal images are full width */
+        .modal-img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">AI Assistant</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="/ask-ui">Ask AI</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/how-ml-works">How ML Works</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/genai-energy">Energy Consumption</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/spring-ai">Spring AI</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/gen-ai-history">Gen AI History</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/neural-networks">Neural Networks</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/nlp">Natural Language Processing</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/rag">Retrieval Augmented Generation</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="container text-center mb-5">
+    <h1 class="fw-bold">Retrieval-Augmented Generation (RAG)</h1>
+    <p class="text-muted">How RAG combines retrieval and generation to improve AI responses with real-world knowledge.</p>
+</div>
+
+<!-- Image Row for RAG-4 and RAG-5 -->
+<div class="container mb-5">
+    <div class="row text-center">
+        <div class="col-md-6 mb-3">
+            <img src="/img/rag-4.png" alt="RAG Architecture 4" class="img-fluid rounded zoomable"
+                 data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalImage('/img/rag-4.png')">
+            <p class="mt-2">Architecture Diagram - Dynamic RAG with Multiple Data Sources</p>
+        </div>
+        <div class="col-md-6 mb-3">
+            <img src="/img/rag-6.png" alt="RAG Architecture 5" class="img-fluid rounded zoomable"
+                 data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalImage('/img/rag-6.png')">
+            <p class="mt-2">Architecture Diagram - Static RAG (with a Vector DB) with Spring AI & LLM APIs</p>
+        </div>
+    </div>
+</div>
+
+<!-- Cards Grid -->
+<div class="container">
+    <div class="row g-4">
+        <!-- Existing cards (no change except font size handled by CSS above) -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-primary h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">What is RAG?</h5>
+                    <ul class="list-unstyled">
+                        <li>• Combines document retrieval with text generation models.</li>
+                        <li>• Enhances answers with up-to-date or domain-specific data.</li>
+                        <li>• Popular in enterprise AI for grounded, factual responses.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-success h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Retrieval Step</h5>
+                    <ul class="list-unstyled">
+                        <li>• Queries a knowledge base or vector database (e.g., Pinecone, FAISS).</li>
+                        <li>• Finds relevant documents or context based on embeddings.</li>
+                        <li>• Supplies retrieved context to the generative model as input.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-info h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Generation Step</h5>
+                    <ul class="list-unstyled">
+                        <li>• Uses a large language model (LLM) to generate natural language answers.</li>
+                        <li>• Combines user query + retrieved documents for context-aware output.</li>
+                        <li>• Produces more accurate and explainable responses than pure LLMs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-warning h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Advantages of RAG</h5>
+                    <ul class="list-unstyled">
+                        <li>• Reduces hallucinations by grounding in retrieved facts.</li>
+                        <li>• Allows using private or enterprise-specific data sources.</li>
+                        <li>• Scales well for dynamic, frequently updated information.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-danger h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Typical Architecture</h5>
+                    <ul class="list-unstyled">
+                        <li>• User query → Embedding → Vector search → Relevant docs.</li>
+                        <li>• Combine docs + query → LLM for generation.</li>
+                        <li>• Output → Answer returned to user with citations/context.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-secondary h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary">Challenges & Future</h5>
+                    <ul class="list-unstyled">
+                        <li>• Latency due to retrieval + generation pipeline.</li>
+                        <li>• Maintaining and updating large knowledge bases.</li>
+                        <li>• Emerging hybrid models combining RAG with fine-tuning for better accuracy.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal for Zoom -->
+<!-- Image Modal for Zoom -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen"> <!-- Fullscreen modal -->
+        <div class="modal-content bg-dark">
+            <div class="modal-body p-0 d-flex justify-content-center align-items-center">
+                <img id="modalImage" class="modal-img" src="" alt="Zoomed Architecture Diagram" style="max-width: 95%; max-height: 95%;">
+            </div>
+            <!-- Close button on top-right -->
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<footer class="text-center mt-5 mb-3 text-muted">&copy; 2025 RAG in Generative AI</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function setModalImage(src) {
+    document.getElementById('modalImage').src = src;
+}
+</script>
+</body>
+</html>

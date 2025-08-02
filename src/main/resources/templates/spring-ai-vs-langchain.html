@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring AI Features & LangChain Comparison</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Apply larger font size only to card content */
+        .card-body {
+            font-size: 1.2em; /* 20% larger for cards */
+        }
+        .card-body h5 {
+            font-size: 1.25em; /* slightly bigger headings in cards */
+        }
+        /* Table retains default Bootstrap font size (no changes applied) */
+    </style>
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">AI Frameworks</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/ask-ui">Ask AI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/how-ml-works">How ML Works</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/genai-energy">Energy Consumption</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/spring-ai">Spring AI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/gen-ai-history">Gen AI History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/neural-networks">Neural Networks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/nlp">Natural Language Processing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/rag">Retrieval Augmented Generation</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="container text-center mb-5">
+    <h1 class="fw-bold">Key Features of Spring AI</h1>
+    <p class="text-muted">Explore the powerful capabilities Spring AI offers for Java developers building AI-driven applications.</p>
+</div>
+
+<!-- Cards Grid: Spring AI Features -->
+<div class="container">
+    <div class="row g-4">
+
+        <!-- Feature 1: Unified API -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100 border-primary">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Unified AI API</h5>
+                    <ul class="list-unstyled">
+                        <li>• Single abstraction for multiple AI providers (OpenAI, Azure, HuggingFace).</li>
+                        <li>• Simplifies switching between models with minimal code changes.</li>
+                        <li>• Consistent request/response handling across services.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2: Prompt Engineering -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100 border-success">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Prompt Engineering</h5>
+                    <ul class="list-unstyled">
+                        <li>• Define prompts programmatically or via external templates.</li>
+                        <li>• Supports multi-turn conversational flows.</li>
+                        <li>• Combine user input with system instructions for better control.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3: Embeddings and RAG -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100 border-info">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Embeddings & RAG</h5>
+                    <ul class="list-unstyled">
+                        <li>• Generate vector embeddings for semantic search and retrieval.</li>
+                        <li>• Integrates with vector databases like Pinecone or Redis.</li>
+                        <li>• Build Retrieval-Augmented Generation (RAG) pipelines easily.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 4: Spring Boot Integration -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100 border-warning">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Seamless Spring Boot Integration</h5>
+                    <ul class="list-unstyled">
+                        <li>• Uses Spring Boot auto-configuration and dependency injection.</li>
+                        <li>• Configure API keys and model settings via `application.yml`.</li>
+                        <li>• Works well with Spring MVC, WebFlux, and microservices.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 5: Retry and Observability -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100 border-danger">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Retry & Observability</h5>
+                    <ul class="list-unstyled">
+                        <li>• Built-in retry mechanisms for transient AI API failures.</li>
+                        <li>• Integrated with Micrometer for metrics and tracing.</li>
+                        <li>• Structured error handling using Spring’s exception model.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 6: Streaming Responses -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100 border-secondary">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary">Streaming Responses</h5>
+                    <ul class="list-unstyled">
+                        <li>• Supports real-time streaming of AI model output to the client.</li>
+                        <li>• Ideal for chat UIs and progressive response rendering.</li>
+                        <li>• Reduces latency perception and improves conversational UX.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Comparison Section -->
+<div class="container mt-5">
+    <h2 class="fw-bold text-center mb-4">Spring AI vs LangChain</h2>
+    <p class="text-center text-muted mb-4">A side-by-side comparison of these two popular AI frameworks.</p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle shadow-sm">
+            <thead class="table-primary">
+            <tr>
+                <th>Aspect</th>
+                <th>Spring AI</th>
+                <th>LangChain (Python)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Language & Ecosystem</strong></td>
+                <td>Java/Spring Boot ecosystem; ideal for enterprise microservices.</td>
+                <td>Python; dominant in research, prototyping, and data science workflows.</td>
+            </tr>
+            <tr>
+                <td><strong>Abstractions</strong></td>
+                <td>ChatClient, EmbeddingClient, auto-config via Spring.</td>
+                <td>Chains, Agents, Tools; highly modular pipeline components.</td>
+            </tr>
+            <tr>
+                <td><strong>Integration</strong></td>
+                <td>Tight integration with Spring Boot (DI, config, observability).</td>
+                <td>Standalone; integrates with Python data/ML libraries and frameworks.</td>
+            </tr>
+            <tr>
+                <td><strong>Use Cases</strong></td>
+                <td>Enterprise applications, API-driven services, backend AI systems.</td>
+                <td>Research, rapid prototyping, notebooks, experimental AI pipelines.</td>
+            </tr>
+            <tr>
+                <td><strong>Community & Maturity</strong></td>
+                <td>Newer; growing adoption in Spring/Java enterprise space.</td>
+                <td>Large and active open-source community with many integrations.</td>
+            </tr>
+            <tr>
+                <td><strong>Strengths</strong></td>
+                <td>Enterprise-grade patterns, type safety, production readiness.</td>
+                <td>Rich ecosystem, agent frameworks, vector DB integrations.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center mt-5 mb-3 text-muted">
+    &copy; 2025 AI Framework Comparison
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
